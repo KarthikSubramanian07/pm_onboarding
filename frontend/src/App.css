@@ -90,3 +90,44 @@ body {
   background: #fdecea;
   color: #c62828;
 }
+
+/* Add item form */
+.add-form {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.add-form h2 {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.25rem;
+}
+
+.add-form input,
+.add-form select {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 120px;
+}
+
+.add-form button {
+  padding: 8px 20px;
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}

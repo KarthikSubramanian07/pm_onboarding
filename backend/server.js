@@ -3,7 +3,15 @@ const app = express()
 
 app.use(express.json())
 
-// placeholder data — this resets every time the server restarts
+// allow the frontend (localhost:5173) to call this server
+app.use((_req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Content-Type')
+  res.header('Access-Control-Allow-Methods', 'GET, POST')
+  next()
+})
+
+// test data that get resets during server restart
 const items = [
   { id: 1, name: "Arduino Kit", category: "Hardware", quantity: 5, status: "Available" },
   { id: 2, name: "Figma License", category: "Software", quantity: 20, status: "Available" },
@@ -12,12 +20,12 @@ const items = [
   { id: 5, name: "Soldering Iron", category: "Hardware", quantity: 2, status: "Available" },
 ]
 
-// return everything in the list
+// return all items
 app.get('/inventory', (req, res) => {
   res.json(items)
 })
 
-// take the request body and add it as a new item
+// add new item
 app.post('/inventory', (req, res) => {
   const { name, category, quantity, status } = req.body
   const newItem = {

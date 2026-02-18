@@ -1,12 +1,4 @@
-const items = [
-  { id: 1, name: "Arduino Kit", category: "Hardware", quantity: 5, status: "Available" },
-  { id: 2, name: "Figma License", category: "Software", quantity: 20, status: "Available" },
-  { id: 3, name: "Raspberry Pi", category: "Hardware", quantity: 3, status: "Available" },
-  { id: 4, name: "Slack License", category: "Software", quantity: 15, status: "Unavailable" },
-  { id: 5, name: "Soldering Iron", category: "Hardware", quantity: 2, status: "Available" },
-]
-
-function InventoryList() {
+function InventoryList({ items }) {
   return (
     <div className="inventory-container">
       <h2>Open Project — Inventory</h2>
