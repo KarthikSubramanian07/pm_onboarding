@@ -7,7 +7,7 @@ function App() {
   const [form, setForm] = useState({ name: '', category: '', quantity: '', status: 'Available' })
 
   function fetchInventory() {
-    fetch('http://localhost:3001/inventory')
+    fetch('https://pm-onboarding.onrender.com/inventory')
       .then(res => res.json())
       .then(data => setItems(data))
   }
@@ -19,7 +19,7 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    fetch('http://localhost:3001/inventory', {
+    fetch('https://pm-onboarding.onrender.com/inventory', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...form, quantity: Number(form.quantity) })
